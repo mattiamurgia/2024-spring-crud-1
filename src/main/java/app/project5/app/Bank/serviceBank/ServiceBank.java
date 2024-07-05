@@ -31,8 +31,17 @@ public class ServiceBank {
     }
 
     // UPDATE a specific account
-    public void updateBankAccount(BankAccount bankAccount) {
-        repoBank.save(bankAccount);
+    public BankAccount updateBankAccount(Integer id, BankAccount bankAccount) throws Exception {
+        Optional<BankAccount> idFound = repoBank.findById(id);
+        if (idFound.isPresent()) {
+            BankAccount accountUpdate = idFound.get();
+            accountUpdate.setName(bankAccount.getName());
+            accountUpdate.setSurname(bankAccount.getSurname());
+            accountUpdate.setPersonalAccount(bankAccount.getPersonalAccount());
+            return repoBank.save(accountUpdate);
+        } else {
+            throw new Exception("ID non presente " + id);
+        }
     }
 
     // DELETE an account

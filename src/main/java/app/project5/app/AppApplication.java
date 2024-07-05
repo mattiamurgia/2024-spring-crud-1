@@ -45,6 +45,7 @@ public class AppApplication implements CommandLineRunner {
 
 			// Adding money to an account
 			c1.addMoney(100.00);
+			c2.addMoney(900.00);
 
 			// Launch exception negative deposit
 			// c1.addMoney(-200);
@@ -87,12 +88,14 @@ public class AppApplication implements CommandLineRunner {
 			// Launch exception
 			// System.out.println(serviceBank.getIndivdualAccountBank(0).get());
 
-			// Updating an account
-			c2.addMoney(900.00);
-
 			// Updating an account database
-			serviceBank.updateBankAccount(c2);
+			BankAccount c7 = new BankAccount("TEST", "TEST");
+			c7.addMoney(100000.00);
+			serviceBank.updateBankAccount(3, c7);
 			System.out.println();
+
+			// Launch exception
+			// serviceBank.updateBankAccount(10, c7);
 
 			// Account with updated amount
 			System.out.println("Account con un account aggiornato sul database:");
