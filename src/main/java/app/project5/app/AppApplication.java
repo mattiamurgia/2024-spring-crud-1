@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import app.project5.app.Bank.pojo.BankAccount;
-import app.project5.app.Bank.pojo.serviceBank.ServiceBank;
+import app.project5.app.Bank.serviceBank.ServiceBank;
 
 @SpringBootApplication
 public class AppApplication implements CommandLineRunner {
@@ -95,7 +95,7 @@ public class AppApplication implements CommandLineRunner {
 			System.out.println();
 
 			// Account with updated amount
-			System.out.println("Account con un account aggiornato sul database: ");
+			System.out.println("Account con un account aggiornato sul database:");
 			System.out.println(serviceBank.getIndivdualAccountBank(2).get());
 			System.out.println();
 

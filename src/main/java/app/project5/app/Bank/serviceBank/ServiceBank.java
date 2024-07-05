@@ -1,4 +1,4 @@
-package app.project5.app.Bank.pojo.serviceBank;
+package app.project5.app.Bank.serviceBank;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.project5.app.Bank.pojo.BankAccount;
-import app.project5.app.Bank.pojo.repoBank.RepoBank;
+import app.project5.app.Bank.repoBank.RepoBank;
 
 @Service
 public class ServiceBank {
