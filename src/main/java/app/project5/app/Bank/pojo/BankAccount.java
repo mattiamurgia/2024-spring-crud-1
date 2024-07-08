@@ -17,10 +17,11 @@ public class BankAccount {
     private String surname;
 
     public BankAccount() {
+        setPersonalAccount(0.0);
     };
 
     public BankAccount(String name, String surname) {
-        setPersonalAccount(0.0);
+        this();
         setName(name);
         setSurname(surname);
     }
@@ -59,11 +60,11 @@ public class BankAccount {
 
     // Method for adding money
     public void addMoney(double amount) throws Exception {
-        if (amount > 0) {
+        if (amount < 0) {
+            throw new Exception("L'importo del deposito non valido");
+        } else {
             this.personalAccount += amount;
             System.out.println("Deposito di " + amount + " effettuato");
-        } else {
-            throw new Exception("L'importo del deposito non valido");
         }
     }
 
@@ -82,7 +83,8 @@ public class BankAccount {
     }
 
     public String getDetails() {
-        return "Saldo attuale di: " + getName() + " - " + getSurname() + " Saldo: " + getPersonalAccount() + " ID: " + getId();
+        return "Saldo attuale di: " + getName() + " - " + getSurname() + " Saldo: " + getPersonalAccount() + " ID: "
+                + getId();
     }
 
     @Override
